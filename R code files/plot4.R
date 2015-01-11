@@ -44,18 +44,15 @@ png(filename = "plot4.png", width = 480, height = 480)
 par(mfrow=c(2,2))
 
 # plot(1,1) = plot #2 but no "(kilowatts)" in y-axis label
-par(mar=c(5.1,4.1,3.1,1.1))
 plot(hpc$r_datetime, hpc$Global_active_power, xlab=NA, ylab="Global Active Power",
      type="o", pch=NA)
 
 # plot(1,2) = similar to plot #2 but voltage vs datetime and 
 #             x-axis label = "datetime"
-par(mar=c(5.1,5.1,3.1,0.2))
 plot(hpc$r_datetime, hpc$Voltage, xlab="datetime", ylab="Voltage",
      type="o", pch=NA)
 
 # plot(2,1) = plot #3 but no box around the legend
-par(mar=c(4.1,4.1,4.1,1.1))
 with(hpc, plot(r_datetime, Sub_metering_1, xlab=NA, ylab="Energy sub metering",
                type="o", pch=NA))
 with(hpc,lines(r_datetime, Sub_metering_2, col="red", pch=NA)) 
@@ -66,7 +63,6 @@ legend("topright", lty=c(1,1,1), lwd=c(1,1,1), col = c("black","blue","red"),
 
 # plot(2,2) = similar to plot #2 but Global_reactive_power vs datetime and 
 #             x-axis label = "datetime"
-par(mar=c(4.1,5.1,4.1,0.2))
 plot(hpc$r_datetime, hpc$Global_reactive_power, xlab="datetime", 
      ylab="Global_reactive_power", type="o", pch=NA)
 
